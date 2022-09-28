@@ -3,7 +3,6 @@ package tests;
 import driverManager.DriverFactory;
 import driverManager.DriverManager;
 import driverManager.DriverType;
-import io.qameta.allure.Attachment;
 import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -31,6 +30,7 @@ public class BaseWebTest extends CommonBaseTest {
         driverManager.setTimeout();
         driverManager.startMaximize();
         driver = driverManager.getDriver();
+
     }
 
 

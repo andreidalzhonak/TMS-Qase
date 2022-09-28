@@ -16,14 +16,14 @@ import utils.RetryAnalyzer;
 @Story("Create Test Case")
 
 
-public class NewTestCaseTest extends BaseWebWithThreadLocalTest {
+public class NewTestCaseTest extends BaseWebTest {
     private static final Logger LOGGER = LogManager.getLogger(NewTestCaseTest.class.getName());
 
     @Test(priority = 1, retryAnalyzer = RetryAnalyzer.class)
     @Description("Create Test Case")
     @Severity(SeverityLevel.BLOCKER)
 
-    public void createNewTestCaseTest() throws InterruptedException {
+    public void createNewTestCaseTest() {
         LOGGER.info(String.format("Page %s initialized", PageLogin.class.getName()));
         PageLogin pageLogin = new PageLogin(driverManager.getDriver());
         LOGGER.info(String.format("Open page" + PageLogin.class.getName()));
