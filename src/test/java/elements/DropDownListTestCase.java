@@ -1,7 +1,7 @@
 package elements;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -18,38 +18,40 @@ public class DropDownListTestCase {
 
     private static final String OPTION_XPATH_SUITE = "//div[contains(@class, 'row')]//input[contains(@id, 'suite')]//parent::div//div//div//div//div[contains(., '%s')]";
 
-    private static final String OPTION_XPATH_MILESTONE = "//div[contains(@class, 'css-1e225yz-menu')]/div/div[contains(., 'Ondricka-Halvorson')]";
+    private static final String OPTION_XPATH_MILESTONE = "//div[contains(@class, 'css-1e225yz-menu')]/div/div[contains(., '%s')]";
 
     private String labelText;
     private WebDriver driver;
 
     public DropDownListTestCase(WebDriver driver, String labelText) {
         this.driver = driver;
-        this.labelText =labelText;
+        this.labelText = labelText;
     }
 
 
-    public void selectOptionInList (String option) {
+    public void selectOptionInList(String option) {
         String listFinalXpath = String.format(LIST_XPATH, labelText);
         driver.findElement(By.xpath(listFinalXpath)).click();
         String optionFinalXpath = String.format(OPTION_XPATH, option);
         driver.findElement(By.xpath(optionFinalXpath)).click();
     }
 
-    public void selectOptionInListForSuite (String option) {
+    public void selectOptionInListForSuite(String option) {
         String listFinalXpath = String.format(LIST_XPATH, labelText);
         driver.findElement(By.xpath(listFinalXpath)).click();
         String optionFinalXpathSuite = String.format(OPTION_XPATH_SUITE, option);
         driver.findElement(By.xpath(optionFinalXpathSuite)).click();
     }
 
-    public void selectOptionInListForMilestone (String option) {
+    public void selectOptionInListForMilestone(String option) {
         String listFinalXpath = String.format(LIST_XPATH_MILESTONE, labelText);
+        String optionFinalXpathMilestone = String.format(OPTION_XPATH_MILESTONE, option);
         WebElement element = driver.findElement(By.xpath(listFinalXpath));
         Actions actions = new Actions(driver);
         actions.moveToElement(element).click().perform();
-        String optionFinalXpathMilestone = String.format(OPTION_XPATH_MILESTONE, option);
-        WebElement element1 = driver.findElement(By.xpath(optionFinalXpathMilestone));
+
+        WebElement element1 = (driver.findElement(By.xpath(optionFinalXpathMilestone)));
         actions.moveToElement(element1).click().perform();
     }
+
 }
