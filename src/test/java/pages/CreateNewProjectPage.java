@@ -11,6 +11,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import testdata.PrepareCreateNewProjectData;
 
+import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
 public class CreateNewProjectPage extends BasePage {
@@ -44,6 +45,7 @@ public class CreateNewProjectPage extends BasePage {
         descriptionNewProjectField.sendKeys(PrepareCreateNewProjectData.getCreateProjectData().getDescription());
         LOGGER.info("Click Create project button");
         createProjectButton.click();
+        driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
 
     }
 

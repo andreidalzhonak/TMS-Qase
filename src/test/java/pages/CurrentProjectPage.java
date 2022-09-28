@@ -3,9 +3,12 @@ package pages;
 import io.qameta.allure.Step;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.concurrent.TimeUnit;
 
@@ -31,7 +34,6 @@ public class CurrentProjectPage extends BasePage {
     @Step("Check what Suite Button is Displayed")
     public boolean createSuiteButtonIsDisplayed() {
         LOGGER.debug(String.format("Check button: %s", createSuiteButton.getText()));
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         boolean suiteButton = createSuiteButton.isDisplayed();
         return suiteButton;
     }

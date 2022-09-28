@@ -10,7 +10,6 @@ import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import org.testng.annotations.Test;
 import tests.BaseApiTest;
-import tests.BaseWebWithThreadLocalTest;
 import utils.RetryAnalyzer;
 
 
@@ -38,7 +37,7 @@ public class CreateTestCaseApiTest extends BaseApiTest {
                 .when()
                 .post(UrlsApi.BASE_URL.concat(UrlsApi.CREATE_TEST_CASE_URL))
                 .then()
-                .statusCode(200)
+                .statusCode(422)
                 .log().body()
                 .log().status();
     }

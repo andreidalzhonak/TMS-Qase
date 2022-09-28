@@ -21,7 +21,7 @@ public class FakeMessageGenerator {
     }
 
     public static String generateDescriptionApi() {
-        return new Faker().file().fileName();
+        return new Faker().gameOfThrones().house();
     }
 
     public static int generateDueDataApi() {
@@ -67,11 +67,11 @@ public class FakeMessageGenerator {
     }
 
     public static int generateSuiteId() {
-        return new Faker().number().numberBetween(1, 6);
+        return new Faker().number().numberBetween(1, 120);
     }
 
     public static int generateMilestoneId() {
-        return new Faker().number().numberBetween(0, 38);
+        return new Faker().number().numberBetween(0, 150);
     }
 
     public static int generateAutomation() {
