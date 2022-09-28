@@ -1,11 +1,11 @@
 package elements;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
+
 
 import java.time.Duration;
 
@@ -19,7 +19,6 @@ public class DropDownListTestCase {
     private static final String OPTION_XPATH_SUITE = "//div[contains(@class, 'row')]//input[contains(@id, 'suite')]//parent::div//div//div//div//div[contains(., '%s')]";
 
     private static final String OPTION_XPATH_MILESTONE = "//div[@id='layout']/div[6]//div/div//div[contains(., '%s')]";
-
 
     private String labelText;
     private WebDriver driver;
@@ -40,8 +39,8 @@ public class DropDownListTestCase {
     public void selectOptionInListForSuite (String option) {
         String listFinalXpath = String.format(LIST_XPATH, labelText);
         driver.findElement(By.xpath(listFinalXpath)).click();
-        String optionFinalXpath = String.format(OPTION_XPATH_SUITE, option);
-        driver.findElement(By.xpath(optionFinalXpath)).click();
+        String optionFinalXpathSuite = String.format(OPTION_XPATH_SUITE, option);
+        driver.findElement(By.xpath(optionFinalXpathSuite)).click();
     }
 
     public void selectOptionInListForMilestone (String option) throws InterruptedException {
@@ -49,8 +48,9 @@ public class DropDownListTestCase {
         WebElement element = driver.findElement(By.xpath(listFinalXpath));
         Actions actions = new Actions(driver);
         actions.moveToElement(element).click().perform();
-        String optionFinalXpath = String.format(OPTION_XPATH_MILESTONE, option);
-        WebElement element1 = driver.findElement(By.xpath(optionFinalXpath));
+        String optionFinalXpathMilestone = String.format(OPTION_XPATH_MILESTONE, option);
+        WebElement element1 = driver.findElement(By.xpath(optionFinalXpathMilestone));
+
         actions.moveToElement(element1).click().perform();
     }
 }
