@@ -18,7 +18,7 @@ public class DropDownListTestCase {
 
     private static final String OPTION_XPATH_SUITE = "//div[contains(@class, 'row')]//input[contains(@id, 'suite')]//parent::div//div//div//div//div[contains(., '%s')]";
 
-    private static final String OPTION_XPATH_MILESTONE = "//div[contains(@id, 'layout')]/div/self::div/div[contains(@class, ' css-1e225yz-menu')]/div/div[contains(., '%s')]";
+    private static final String OPTION_XPATH_MILESTONE = "//div[contains(@class, 'css-1e225yz-menu')]/div/div[contains(., 'Ondricka-Halvorson')]";
 
     private String labelText;
     private WebDriver driver;
