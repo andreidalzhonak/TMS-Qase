@@ -44,8 +44,10 @@ public class TestRunsPage extends BasePage {
     @FindBy(xpath = "//form[contains(@class, 'form-delete-milestone')]//button")
     private WebElement deleteRun;
 
-    @FindBy(xpath = "//div[contains(@class, 'no-entities')]//span")
-    private WebElement messageDontTestRun;
+
+
+    @FindBy(xpath = "//div[@class='no-entities-content']//a")
+    private WebElement startTestRunButton;
 
     @Step("Click Drop Down button")
     public void clickDropDownButton() {
@@ -53,11 +55,11 @@ public class TestRunsPage extends BasePage {
         dropDownButton.click();
     }
 
-    @Step("Check message don't test run")
-    public String getMessageDontTestRun() {
-        LOGGER.debug(String.format("Check message don't test run: %s", messageDontTestRun.getText()));
-        String messageTestRun = messageDontTestRun.getText();
-        return messageTestRun;
+    @Step("Check start new test run button")
+    public String getNameButton() {
+        LOGGER.debug(String.format("Check start new test run button: %s", startTestRunButton.getText()));
+        String messageNameButton = startTestRunButton.getText();
+               return messageNameButton;
     }
 
 
@@ -120,7 +122,7 @@ public class TestRunsPage extends BasePage {
         new DropDownListTestRuns(driver).selectOptionInListTestSuite(testRun.getSuite());
         LOGGER.info("Click Done button");
         clickDoneButton();
-        LOGGER.info("Click Starr run button");
+        LOGGER.info("Click Start run button");
         clickStartRunButton();
     }
 

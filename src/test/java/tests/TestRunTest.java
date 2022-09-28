@@ -57,8 +57,8 @@ public class TestRunTest extends BaseWebWithThreadLocalTest {
         TestRunsPage testRunsPage = new TestRunsPage(driverManager.getDriver());
         LOGGER.info("Delete Test Run");
         testRunsPage.deleteTestRun();
-        LOGGER.info("Check notification start test run ");
-        Assert.assertEquals(testRunsPage.getMessageDontTestRun(), "Looks like you don’t have any test runs yet.");
+        LOGGER.info("Check name start new test run button");
+        Assert.assertEquals(testRunsPage.getNameButton(), "Start new test run");
     }
 
 }
