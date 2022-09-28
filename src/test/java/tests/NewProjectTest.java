@@ -22,7 +22,7 @@ public class NewProjectTest extends BaseWebTest {
     @Description("Login in Qase account")
     @Severity(SeverityLevel.BLOCKER)
 
-    public void createNewProjectTest() {
+    public void createNewProjectTest() throws InterruptedException {
         LOGGER.info(String.format("Page %s initialized", PageLogin.class.getName()));
         PageLogin pageLogin = new PageLogin(driverManager.getDriver());
         LOGGER.info(String.format("Open page" + PageLogin.class.getName()));

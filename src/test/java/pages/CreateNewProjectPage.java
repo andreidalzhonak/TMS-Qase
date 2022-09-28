@@ -31,14 +31,15 @@ public class CreateNewProjectPage extends BasePage {
         LOGGER.debug(String.format("Await %s", projectNameField));
         WebDriverWait wait = new WebDriverWait(driver, 10);
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("inputTitle")));
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
     }
 
     @Step("Input Data for New Project")
-    public void createNewProject() {
+    public void createNewProject() throws InterruptedException {
         awaitProjectNameField();
         LOGGER.debug(String.format("Input project Name %s", PrepareCreateNewProjectData.getCreateProjectData().getProjectName()));
         projectNameField.sendKeys(PrepareCreateNewProjectData.getCreateProjectData().getProjectName());
+        Thread.sleep(8000);
         LOGGER.debug(String.format("Input description field %s", PrepareCreateNewProjectData.getCreateProjectData().getDescription()));
         descriptionNewProjectField.sendKeys(PrepareCreateNewProjectData.getCreateProjectData().getDescription());
         LOGGER.info("Click Create project button");
