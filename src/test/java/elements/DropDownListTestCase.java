@@ -44,12 +44,15 @@ public class DropDownListTestCase {
         driver.findElement(By.xpath(optionFinalXpath)).click();
     }
 
-    public void selectOptionInListForMilestone (String option) {
+    public void selectOptionInListForMilestone (String option) throws InterruptedException {
         String listFinalXpath = String.format(LIST_XPATH_MILESTONE, labelText);
         WebElement element = driver.findElement(By.xpath(listFinalXpath));
         Actions actions = new Actions(driver);
         actions.moveToElement(element).click().perform();
+        Thread.sleep(6000);
         String optionFinalXpath = String.format(OPTION_XPATH_MILESTONE, option);
+        Thread.sleep(6000);
         driver.findElement(By.xpath(optionFinalXpath)).click();
+
     }
 }
