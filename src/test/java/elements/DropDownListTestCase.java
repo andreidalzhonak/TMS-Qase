@@ -50,8 +50,7 @@ public class DropDownListTestCase {
         Actions actions = new Actions(driver);
         actions.moveToElement(element).click().perform();
         String optionFinalXpath = String.format(OPTION_XPATH_MILESTONE, option);
-        Thread.sleep(6000);
-        driver.findElement(By.xpath(optionFinalXpath)).click();
-
+        WebElement element1 = driver.findElement(By.xpath(optionFinalXpath));
+        actions.moveToElement(element1).click().perform();
     }
 }
