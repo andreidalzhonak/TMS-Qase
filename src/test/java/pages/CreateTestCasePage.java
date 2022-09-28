@@ -88,7 +88,7 @@ public class CreateTestCasePage extends BasePage {
     }
 
     @Step("Input Data in New test case from")
-    public void testCaseForm(CreateTestCaseDataModel testCase) {
+    public void testCaseForm(CreateTestCaseDataModel testCase) throws InterruptedException {
         LOGGER.debug(String.format("Input Title field: %s", PrepareCreateTestCaseData.getCreateTestCaseData().getTitle()));
         titleField.sendKeys(PrepareCreateTestCaseData.getCreateTestCaseData().getTitle());
         LOGGER.debug(String.format("Input Status: %s", testCase.getStatus()));

@@ -13,7 +13,7 @@ import java.time.Duration;
 public class DropDownListTestCase {
     private static final String LIST_XPATH = "//div//form[contains(@class, 'form-create-case')]//div//label[text()='%s']//parent::div//div/button";
 
-    private static final String LIST_XPATH_MILESTONE = "//label[text()='Milestone']//../div[1]";
+    private static final String LIST_XPATH_MILESTONE = "//label[text()='%s']//../div[1]";
     private static final String OPTION_XPATH = "//div[contains(@id, 'modals')]//div//div/div/div[contains(., '%s')]";
 
     private static final String OPTION_XPATH_SUITE = "//div[contains(@class, 'row')]//input[contains(@id, 'suite')]//parent::div//div//div//div//div[contains(., '%s')]";
@@ -49,7 +49,6 @@ public class DropDownListTestCase {
         WebElement element = driver.findElement(By.xpath(listFinalXpath));
         Actions actions = new Actions(driver);
         actions.moveToElement(element).click().perform();
-
         WebElement element1 = (driver.findElement(By.xpath(optionFinalXpathMilestone)));
         actions.moveToElement(element1).click().perform();
     }

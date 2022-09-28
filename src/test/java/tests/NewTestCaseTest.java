@@ -23,7 +23,7 @@ public class NewTestCaseTest extends BaseWebTest {
     @Description("Create Test Case")
     @Severity(SeverityLevel.BLOCKER)
 
-    public void createNewTestCaseTest() {
+    public void createNewTestCaseTest() throws InterruptedException {
         LOGGER.info(String.format("Page %s initialized", PageLogin.class.getName()));
         PageLogin pageLogin = new PageLogin(driverManager.getDriver());
         LOGGER.info(String.format("Open page" + PageLogin.class.getName()));
