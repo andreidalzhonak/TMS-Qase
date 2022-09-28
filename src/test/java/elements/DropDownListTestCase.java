@@ -1,6 +1,7 @@
 package elements;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 
 
@@ -40,7 +41,10 @@ public class DropDownListTestCase {
 
     public void selectOptionInListForMilestone (String option) {
         String listFinalXpath = String.format(LIST_XPATH_MILESTONE, labelText);
-        driver.findElement(By.xpath(listFinalXpath)).click();
+
+        JavascriptExecutor executor = (JavascriptExecutor)driver;
+        executor.executeScript("arguments[0].click();", driver.findElement(By.xpath(listFinalXpath)));
+
         String optionFinalXpath = String.format(OPTION_XPATH_MILESTONE, option);
         driver.findElement(By.xpath(optionFinalXpath)).click();
     }
