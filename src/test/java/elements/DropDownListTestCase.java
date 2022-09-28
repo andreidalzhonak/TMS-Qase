@@ -18,7 +18,7 @@ public class DropDownListTestCase {
 
     private static final String OPTION_XPATH_SUITE = "//div[contains(@class, 'row')]//input[contains(@id, 'suite')]//parent::div//div//div//div//div[contains(., '%s')]";
 
-    private static final String OPTION_XPATH_MILESTONE = "//div[@id=\"layout\"]/div[6]//div/div//div[contains(., '%s')]";
+    private static final String OPTION_XPATH_MILESTONE = "//div[@id='layout']/div[6]//div/div//div[contains(., '')]";
 
 
     private String labelText;
@@ -49,7 +49,6 @@ public class DropDownListTestCase {
         WebElement element = driver.findElement(By.xpath(listFinalXpath));
         Actions actions = new Actions(driver);
         actions.moveToElement(element).click().perform();
-        Thread.sleep(6000);
         String optionFinalXpath = String.format(OPTION_XPATH_MILESTONE, option);
         Thread.sleep(6000);
         driver.findElement(By.xpath(optionFinalXpath)).click();
