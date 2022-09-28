@@ -2,6 +2,12 @@ package elements;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 
 public class DropDownListTestCase {
@@ -40,7 +46,9 @@ public class DropDownListTestCase {
 
     public void selectOptionInListForMilestone (String option) {
         String listFinalXpath = String.format(LIST_XPATH_MILESTONE, labelText);
-        driver.findElement(By.xpath(listFinalXpath)).click();
+        WebElement element = driver.findElement(By.xpath(listFinalXpath));
+        Actions actions = new Actions(driver);
+        actions.moveToElement(element).click().perform();
         String optionFinalXpath = String.format(OPTION_XPATH_MILESTONE, option);
         driver.findElement(By.xpath(optionFinalXpath)).click();
     }
