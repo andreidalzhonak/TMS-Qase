@@ -7,7 +7,7 @@ import org.openqa.selenium.WebDriver;
 public class DropDownListTestCase {
     private static final String LIST_XPATH = "//div//form[contains(@class, 'form-create-case')]//div//label[text()='%s']//parent::div//div/button";
 
-    private static final String LIST_XPATH_MILESTONE = "//div[contains(@class, 'row')]//label[text()='Milestone']//following-sibling::div//input";
+    private static final String LIST_XPATH_MILESTONE = "//div[contains(@class, 'row')]//label[text()='Milestone']//following-sibling::div[1]";
     private static final String OPTION_XPATH = "//div[contains(@id, 'modals')]//div//div/div/div[contains(., '%s')]";
 
     private static final String OPTION_XPATH_SUITE = "//div[contains(@class, 'row')]//input[contains(@id, 'suite')]//parent::div//div//div//div//div[contains(., '%s')]";
