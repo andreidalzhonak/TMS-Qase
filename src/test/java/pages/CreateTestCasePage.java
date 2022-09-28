@@ -83,6 +83,7 @@ public class CreateTestCasePage extends BasePage {
 
     @Step("Click Save Button")
     public void clickSaveButton() {
+        js.executeScript("arguments[0].scrollIntoView();", saveButton);
         LOGGER.debug(String.format("Click Save Button: %s", saveButton.getText()));
         saveButton.click();
     }
