@@ -15,7 +15,7 @@ import utils.RetryAnalyzer;
 @Feature("Login")
 @Story("Input Credentials")
 
-public class NewProjectTest extends BaseWebWithThreadLocalTest {
+public class NewProjectTest extends BaseWebTest {
     private static final Logger LOGGER = LogManager.getLogger(NewProjectTest.class.getName());
 
     @Test(priority = 1, retryAnalyzer = RetryAnalyzer.class)
@@ -34,7 +34,7 @@ public class NewProjectTest extends BaseWebWithThreadLocalTest {
         LOGGER.info("Click Create Button");
         projectsPage.clickCreateButton();
         LOGGER.info(String.format("Page %s initialized", CreateNewProjectPage.class.getName()));
-        CreateNewProjectPage newProjectPage =new CreateNewProjectPage(driverManager.getDriver());
+        CreateNewProjectPage newProjectPage = new CreateNewProjectPage(driverManager.getDriver());
         LOGGER.info("Input Data for create New Project");
         newProjectPage.createNewProject();
         LOGGER.info(String.format("Page %s initialized", CurrentProjectPage.class.getName()));

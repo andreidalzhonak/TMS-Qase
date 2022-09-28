@@ -45,7 +45,6 @@ public class TestRunsPage extends BasePage {
     private WebElement deleteRun;
 
 
-
     @FindBy(xpath = "//div[@class='no-entities-content']//a")
     private WebElement startTestRunButton;
 
@@ -59,7 +58,7 @@ public class TestRunsPage extends BasePage {
     public String getNameButton() {
         LOGGER.debug(String.format("Check start new test run button: %s", startTestRunButton.getText()));
         String messageNameButton = startTestRunButton.getText();
-               return messageNameButton;
+        return messageNameButton;
     }
 
 

@@ -13,7 +13,7 @@ import utils.RetryAnalyzer;
 @Epic("User Managment")
 @Feature("Test Run")
 @Story("Start and Delete Test Run")
-public class TestRunTest extends BaseWebWithThreadLocalTest {
+public class TestRunTest extends BaseWebTest {
 
     private static final Logger LOGGER = LogManager.getLogger(NewTestSuiteTest.class.getName());
 

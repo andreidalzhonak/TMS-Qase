@@ -11,7 +11,7 @@ import utils.RetryAnalyzer;
 @Epic("User Managment")
 @Feature("Test Suite")
 @Story("Create Test Suite")
-public class NewTestSuiteTest extends BaseWebWithThreadLocalTest {
+public class NewTestSuiteTest extends BaseWebTest {
 
     private static final Logger LOGGER = LogManager.getLogger(NewTestSuiteTest.class.getName());
 

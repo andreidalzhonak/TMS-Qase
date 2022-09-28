@@ -3,17 +3,14 @@ package pages;
 import io.qameta.allure.Step;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.util.concurrent.TimeUnit;
 
 public class CurrentProjectPage extends BasePage {
     private static final Logger LOGGER = LogManager.getLogger(ProjectsPage.class.getName());
+
     @FindBy(xpath = "//div[@id = 'application-content']//div/h1")
     private WebElement nameCurrentProject;
 

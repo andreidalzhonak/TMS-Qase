@@ -14,7 +14,7 @@ import utils.RetryAnalyzer;
 @Feature("Login")
 @Story("Input Credentials")
 
-public class LoginTest extends BaseWebWithThreadLocalTest {
+public class LoginTest extends BaseWebTest {
 
     private static final Logger LOGGER = LogManager.getLogger(LoginTest.class.getName());
 

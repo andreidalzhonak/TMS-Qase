@@ -28,7 +28,6 @@ public class BaseWebTest extends CommonBaseTest {
         driverManager = driverFactory.getManager(type);
         driverManager.createDriver();
         driverManager.setTimeout();
-    //    driverManager.startMaximize();
         driver = driverManager.getDriver();
 
     }
