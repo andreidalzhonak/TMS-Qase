@@ -7,6 +7,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import java.util.concurrent.TimeUnit;
+
 public class CurrentProjectPage extends BasePage {
     private static final Logger LOGGER = LogManager.getLogger(ProjectsPage.class.getName());
     @FindBy(xpath = "//div[@id = 'application-content']//div/h1")
@@ -29,6 +31,7 @@ public class CurrentProjectPage extends BasePage {
     @Step("Check what Suite Button is Displayed")
     public boolean createSuiteButtonIsDisplayed() {
         LOGGER.debug(String.format("Check button: %s", createSuiteButton.getText()));
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         boolean suiteButton = createSuiteButton.isDisplayed();
         return suiteButton;
     }

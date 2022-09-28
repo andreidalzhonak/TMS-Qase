@@ -46,13 +46,27 @@ public class TestRunTest extends BaseWebWithThreadLocalTest {
         Assert.assertEquals(testRunsPage.getTestRunMessage(), "Run was created successfully!");
     }
 
-    @Test(priority = 1, retryAnalyzer = RetryAnalyzer.class)
+    @Test(priority = 2, retryAnalyzer = RetryAnalyzer.class)
     @Description("Delete Test Run")
     @Severity(SeverityLevel.BLOCKER)
 
     public void deleteTestRunTest() {
-        LOGGER.info("Launch Start Test Run test");
-        startTestRunTest();
+        //LOGGER.info("Launch Start Test Run test");
+        //startTestRunTest();
+
+        LOGGER.info(String.format("Page %s initialized", PageLogin.class.getName()));
+        PageLogin pageLogin = new PageLogin(driverManager.getDriver());
+        LOGGER.info(String.format("Open page" + PageLogin.class.getName()));
+        LOGGER.info("Input username and Password");
+        LOGGER.info("Click Button");
+        pageLogin.loginToQase();
+        LOGGER.info(String.format("Page %s initialized", ProjectsPage.class.getName()));
+        ProjectsPage projectsPage = new ProjectsPage(driverManager.getDriver());
+        LOGGER.info("Click Project");
+        projectsPage.clickProjectSharelane();
+        CurrentProjectPage currentProjectPage = new CurrentProjectPage(driverManager.getDriver());
+        LOGGER.info("Click Test Run Button");
+        currentProjectPage.clickTestRunsButton();
         LOGGER.info(String.format("Page %s initialized", TestRunsPage.class.getName()));
         TestRunsPage testRunsPage = new TestRunsPage(driverManager.getDriver());
         LOGGER.info("Delete Test Run");
