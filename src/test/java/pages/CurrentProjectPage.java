@@ -11,9 +11,6 @@ import org.openqa.selenium.support.FindBy;
 public class CurrentProjectPage extends BasePage {
     private static final Logger LOGGER = LogManager.getLogger(ProjectsPage.class.getName());
 
-    @FindBy(xpath = "//div[@id = 'application-content']//div/h1")
-    private WebElement nameCurrentProject;
-
     @FindBy(id = "create-suite-button")
     private WebElement createSuiteButton;
 
