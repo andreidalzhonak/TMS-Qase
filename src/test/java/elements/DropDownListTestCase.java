@@ -1,14 +1,13 @@
 package elements;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 
 
 public class DropDownListTestCase {
     private static final String LIST_XPATH = "//div//form[contains(@class, 'form-create-case')]//div//label[text()='%s']//parent::div//div/button";
 
-    private static final String LIST_XPATH_MILESTONE = "//div[contains(@class, 'row')]//label[text()='Milestone']//parent::div//div[contains(@class, 'notranslate')]/div[2]";
+    private static final String LIST_XPATH_MILESTONE = "//div[contains(@class, 'row')]//label[text()='Milestone']//ancestor::div[2]/div[1]/div/div[1]/div[1]";
     private static final String OPTION_XPATH = "//div[contains(@id, 'modals')]//div//div/div/div[contains(., '%s')]";
 
     private static final String OPTION_XPATH_SUITE = "//div[contains(@class, 'row')]//input[contains(@id, 'suite')]//parent::div//div//div//div//div[contains(., '%s')]";
@@ -41,10 +40,7 @@ public class DropDownListTestCase {
 
     public void selectOptionInListForMilestone (String option) {
         String listFinalXpath = String.format(LIST_XPATH_MILESTONE, labelText);
-
-        JavascriptExecutor executor = (JavascriptExecutor)driver;
-        executor.executeScript("arguments[0].click();", driver.findElement(By.xpath(listFinalXpath)));
-
+        driver.findElement(By.xpath(listFinalXpath)).click();
         String optionFinalXpath = String.format(OPTION_XPATH_MILESTONE, option);
         driver.findElement(By.xpath(optionFinalXpath)).click();
     }
