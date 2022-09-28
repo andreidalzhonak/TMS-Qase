@@ -15,7 +15,7 @@ public class BaseWebWithThreadLocalTest extends CommonBaseTest {
 
     DriverThreadLocalManager driverManager;
 
-    @BeforeClass
+    @BeforeMethod
     public void createManager() {
         DriverThreadLocalManagerFactory factory = new DriverThreadLocalManagerFactory();
         driverManager = factory.getManager(DriverType.CHROME);
