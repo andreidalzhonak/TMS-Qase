@@ -13,7 +13,7 @@ public class ChromeDriverManager extends DriverManager {
         WebDriverManager.chromedriver().setup();
         ChromeOptions options = new ChromeOptions();
         //options.addArguments("--headless");
-       // options.addArguments("window-size=1800x900");
+        // options.addArguments("window-size=1800x900");
         options.addArguments("--disable-notifications");
         options.setExperimentalOption("excludeSwitches",
                 Arrays.asList("disable-popup-blocking"));

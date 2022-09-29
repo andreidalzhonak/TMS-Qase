@@ -9,7 +9,6 @@ import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import org.testng.annotations.Test;
 import tests.BaseApiTest;
-import tests.BaseWebWithThreadLocalTest;
 import utils.RetryAnalyzer;
 
 @Epic("User Managment")

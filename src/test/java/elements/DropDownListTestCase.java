@@ -45,14 +45,12 @@ public class DropDownListTestCase {
         String optionFinalXpathMilestone = String.format(OPTION_XPATH_MILESTONE, option);
         WebElement element = driver.findElement(By.xpath(listFinalXpath));
         Actions actions = new Actions(driver);
-        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();",element);
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();", element);
         actions.moveToElement(element).click().perform();
         WebElement element1 = (driver.findElement(By.xpath(optionFinalXpathMilestone)));
-        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();",element1);
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();", element1);
         actions.moveToElement(element1).click().perform();
     }
-
-
 
 
 }

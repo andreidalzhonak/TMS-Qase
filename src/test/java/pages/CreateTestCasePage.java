@@ -23,7 +23,7 @@ public class CreateTestCasePage extends BasePage {
     @FindBy(id = "0-description")
     private WebElement descriptionField;
 
-    @FindBy(id= "0-preconditions")
+    @FindBy(id = "0-preconditions")
     private WebElement preconditionsField;
 
     @FindBy(id = "0-postconditions")

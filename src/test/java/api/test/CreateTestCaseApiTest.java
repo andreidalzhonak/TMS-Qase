@@ -24,7 +24,7 @@ public class CreateTestCaseApiTest extends BaseApiTest {
     @Severity(SeverityLevel.BLOCKER)
 
     public void createTestCaseTest() {
-        TestCaseModel model  = PrepareDataApi.getValidDataForTestCase();
+        TestCaseModel model = PrepareDataApi.getValidDataForTestCase();
 
         RestAssured
                 .given()
