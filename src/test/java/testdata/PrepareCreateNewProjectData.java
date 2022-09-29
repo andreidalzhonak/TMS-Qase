@@ -9,6 +9,7 @@ public class PrepareCreateNewProjectData {
         return CreateNewProjectDataModel
                 .builder()
                 .projectName(FakeMessageGenerator.generateProjectName())
+                .projectCode(FakeMessageGenerator.generateProjectName())
                 .description(FakeMessageGenerator.generateDescriptionNewProject())
                 .build();
     }

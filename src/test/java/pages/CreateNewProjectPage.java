@@ -19,6 +19,9 @@ public class CreateNewProjectPage extends BasePage {
     @FindBy(id = "inputTitle")
     private WebElement projectNameField;
 
+    @FindBy(id = "inputCode")
+    private WebElement projectCodeField;
+
 
     @FindBy(id = "inputDescription")
     private WebElement descriptionNewProjectField;
@@ -40,6 +43,7 @@ public class CreateNewProjectPage extends BasePage {
         LOGGER.debug(String.format("Input project Name %s", PrepareCreateNewProjectData.getCreateProjectData().getProjectName()));
         projectNameField.sendKeys(PrepareCreateNewProjectData.getCreateProjectData().getProjectName());
         Thread.sleep(8000);
+        projectCodeField.sendKeys(PrepareCreateNewProjectData.getCreateProjectData().getProjectCode());
         LOGGER.debug(String.format("Input description field %s", PrepareCreateNewProjectData.getCreateProjectData().getDescription()));
         descriptionNewProjectField.sendKeys(PrepareCreateNewProjectData.getCreateProjectData().getDescription());
         LOGGER.info("Click Create project button");

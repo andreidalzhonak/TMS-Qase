@@ -7,5 +7,6 @@ import lombok.Data;
 @Builder
 public class CreateNewProjectDataModel {
     private String projectName;
+    private String projectCode;
     private String description;
 }
