@@ -37,7 +37,7 @@ public class CreateTestCaseApiTest extends BaseApiTest {
                 .when()
                 .post(UrlsApi.BASE_URL.concat(UrlsApi.CREATE_TEST_CASE_URL))
                 .then()
-                .statusCode(422)
+                .statusCode(200)
                 .log().body()
                 .log().status();
     }
