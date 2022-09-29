@@ -20,25 +20,25 @@ public class CreateTestCasePage extends BasePage {
     @FindBy(id = "title")
     private WebElement titleField;
 
-    @FindBy(xpath = "//div//label[contains(., 'Description')]//parent::div//div//div//p")
+    @FindBy(id = "0-description")
     private WebElement descriptionField;
 
-    @FindBy(xpath = "//div//label[contains(., 'Pre-conditions')]//parent::div//div//div//p[contains(@class, 'empty-node')]")
+    @FindBy(id= "0-preconditions")
     private WebElement preconditionsField;
 
-    @FindBy(xpath = "//div//label[contains(., 'Post-conditions')]//parent::div//div//div//p[contains(@class, 'empty-node')]")
+    @FindBy(id = "0-postconditions")
     private WebElement postconditionsField;
 
     @FindBy(xpath = "//div[contains(@class, 'steps-add')]//a[contains(@id, 'add-step')]")
     private WebElement addStepButton;
 
-    @FindBy(xpath = "//div[contains(@id, 'action')]//p")
+    @FindBy(id = "action[0]")
     private WebElement actionField;
 
-    @FindBy(xpath = "//div[contains(@id, 'data')]//p")
+    @FindBy(id = "data[0]")
     private WebElement inputDataField;
 
-    @FindBy(xpath = "//div[contains(@id, 'expected_result')]//p")
+    @FindBy(id = "expected_result[0]")
     private WebElement expectedResultField;
 
     @FindBy(xpath = "//div[contains(@class, 'save-menu-wrapper')]//button[contains(@id, 'save-case')]")

@@ -1,9 +1,6 @@
 package elements;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.TimeoutException;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 
 
@@ -48,9 +45,14 @@ public class DropDownListTestCase {
         String optionFinalXpathMilestone = String.format(OPTION_XPATH_MILESTONE, option);
         WebElement element = driver.findElement(By.xpath(listFinalXpath));
         Actions actions = new Actions(driver);
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();",element);
         actions.moveToElement(element).click().perform();
         WebElement element1 = (driver.findElement(By.xpath(optionFinalXpathMilestone)));
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();",element1);
         actions.moveToElement(element1).click().perform();
     }
+
+
+
 
 }
